@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class S {
+
+	static int singleNum(int ar[]) {
+		Set <Integer> s = new HashSet<Integer>();
+		for(int x : ar) {
+			if(s.contains(x)) s.remove(x);
+			else s.add(x);
+		}
+		return (int) s.toArray()[0];
+	}
+	
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n=scan.nextInt();
+		int arr[] = new int[n];
+
+		for(int i=0;i<n;i++) {
+			arr[i]=scan.nextInt();
+		}
+		scan.close();
+		System.out.println(singleNum(arr));
+	}
+
+}
